@@ -17,10 +17,24 @@ th{
   padding: 10px;
   border: 2px solid #151515;
 }
-caption{
+.caption1{
   margin: 1em;
   font-weight: bold;
-  font-size: 120%;
+  font-size: 18px;
+  position: absolute;
+  top: 435px;
+  text-align: left;
+  color: #151515;
+}
+
+.caption2{
+  margin: 1em;
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  top: 645px;
+  text-align: left;
+  color: #151515;
 }
 
 tr:nth-of-type(odd){
@@ -38,30 +52,25 @@ input,textarea{
   margin-bottom: .5em;
 }
 
-audio{
-  display: block;
-  margin-top: 1em;
-}
-
-.item{
-  background-color: #faf9f7;
-  margin: 1em;
-  padding: 1em;
-  overflow: auto;
-  float: right;
-}
-  
-.item img{
-  float:right;
-}
-  
-.item button{
-  width:100px;
-  margin-left: auto;
-  margin-right: auto;
+form button{
+  padding: .5em;
 }
   
 @media(min-width:1024px){
+  form{
+    width: 90%;
+    display: grid;
+    grid-template-columns: 12em 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1em;
+  }
+  label{
+      text-align: right;
+  }
+  button[submit]{
+      grid-column: 2;
+      width: 9em;
+  }
   body{
     background-image: url(images/binary.jpg);
     font-size: .8em;
@@ -70,7 +79,7 @@ audio{
   }
 
   header{
-    background-image: url(images/husky.gif);
+    background-image: url(images/husky.png);
     background-color: #006a00;
     height: 150px;
     background-repeat: no-repeat;
@@ -102,6 +111,7 @@ audio{
     padding-top: 30px;
     padding-left: 220px;
     line-height: 200%;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   }
 
   h2{
@@ -189,12 +199,6 @@ audio{
     border: 2px solid #151515; 
   }
 
-  #flow{
-    padding-left: 10px;
-    display: flex;
-    flex-direction: row;
-  }
-
   #wrapper{
     margin-right: auto;
     margin-left: auto;
@@ -206,11 +210,11 @@ audio{
   }
 
   #homehero{
-    background-image: url(images/rdr2.jpg);
+    background-image: url(images/prom.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     display: block;
-    height: 400px;
+    height: 500px;
     padding-bottom: 1em;
   }
     
@@ -226,6 +230,12 @@ audio{
     height: 400px;
   }
 
+  #herothanks{ 
+    background-image: url(images/superbowl.jpg);
+    background-size: 100% 100%;
+    height: 500px;
+  }
+
   #mobile{
     display: none;
 
@@ -235,26 +245,179 @@ audio{
     display: inline;
   }
 
-  .onethird{
-    float: left;
-    width: 33%;
-    padding-left: 2em;
-    padding-right: 2em;
-  }
-
-  .details{
-    padding-left: 20%;
-    padding-right: 20%;
-    overflow: auto;
-  }
-
-  .floatleft{
-    padding-right: 2em;
-    padding-bottom: 2em;
+  .responsive {
+    width: 100%;
+    height: auto;
   }
 }
 
-@media(max-width:600px){
+@media(max-width:1024px){
+  body{
+    background-color: #1bb11b;
+    font-size: .8em;
+    color: #151515;
+    font-family: Verdana, Arial, sans-serif;
+  }
+
+  header{
+    background-image: url(images/husky.png);
+    background-color: #006a00;
+    height: 150px;
+    background-repeat: no-repeat;
+  }
+
+  header a:link{
+    text-decoration: none;
+    display: block;
+    color: #151515;
+  }
+
+  header a:visited{
+    text-decoration: none;
+    display: block;
+    color: #151515;
+  }
+
+  header a:hover{
+    text-decoration: none;
+    display: block;
+    color: #d3d3d3;
+  }
+
+  main h2, main h3, main h4, main p, main div, main ul, main dl { padding-left: 3em; padding-right: 2em; }
+  header, nav, main, footer { display: block; }
+
+  h1{
+    font-size: 3em;
+    padding-top: 30px;
+    padding-left: 220px;
+    line-height: 200%;
+  }
+
+  h2{
+    color: #006a00;
+    font-size: 1.5em;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    font-weight: bold;
+  }
+
+  h3{
+    font-size: 1.2em;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    font-weight: bold;
+  }
+
+  h4{
+    background-color: #1bb11b;
+    font-size: 1.2em; 
+    padding-left: 10px; 
+    padding-bottom: 0px;
+    border-bottom: 2px solid #151515;
+    text-transform: uppercase; 
+    clear: left;
+  }
+
+  nav{
+    margin: 0;
+    font-size: 1.5em;
+  }
+
+  nav a{
+    display: block;
+    padding: 0.2em;
+    text-decoration: none;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #151515;
+    text-align: center;
+  }
+
+  nav ul{ 
+    display: block;
+  }
+
+  nav li{
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+    border-bottom: 1px solid;
+  }
+
+  nav a:link { color: #fbfbfb; }
+  nav a:visited { color: #fbfbfb; }
+  nav a:hover { color: #006a00; }
+
+  main{
+    padding: 0px 0px 2em 0px;
+    background-color: #d3d3d3;
+    color: #151515;
+  }
+
+  main a:link { color: #151515; }
+  main a:visited { color: #151515; }
+  main a:hover { color: #1bb11b; }
+
+  img{
+    border: 0;
+  }
+
+  footer{
+    background-color: #006a00;
+    color: #fbfbfb;
+    font-size: .65em; 
+    font-style: italic;
+    text-align: center;
+    padding-bottom: 10px; 
+    border: 2px solid #151515; 
+  }
+
+  #wrapper{
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+    background-color: #151515;
+    min-width: 700px;
+    max-width: 1024px;
+    box-shadow: 3px 3px 3px;
+  }
+
+  #homehero{
+    background-image: url(images/prom.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    height: 500px;
+    padding-bottom: 1em;
+  }
+    
+  #heroprojects{ 
+    background-image: url(images/postcard.png);
+    background-size: 100% 100%;
+    height: 400px;
+  }
+
+  #herothanks{ 
+    background-image: url(images/superbowl.jpg);
+    background-size: 100% 100%;
+    height: 500px;
+  }
+
+  #mobile{
+    display: inline;
+
+  }
+
+  #desktop{
+    display: none;
+  }
+
+  .responsive {
+    width: 100%;
+    height: auto;
+  }
 }
 
 * {box-sizing: border-box;}
